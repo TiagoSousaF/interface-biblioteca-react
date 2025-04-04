@@ -9,7 +9,8 @@
     align-items: center;
 }
 
-.cabecalho img {
+.imglogo,
+.imglogo img {
     height: 100%;
 }
 
