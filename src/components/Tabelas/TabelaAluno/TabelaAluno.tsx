@@ -12,6 +12,8 @@ import AlunoRequests from '../../../fetch/AlunoRequests'; // Importa a classe re
 import estilo from './TabelaAluno.module.css'; // Importa os estilos específicos para este componente
 import AlunoDTO from '../../../interfaces/AlunoInterface';
 
+import { APP_ROUTES } from '../../../appConfig';
+
 /**
  * Componente que exibe uma tabela com os dados dos alunos.
  * Os dados são carregados da API assim que o componente é montado na tela.
@@ -41,6 +43,13 @@ function TabelaAluno(): JSX.Element {
         <main>
             {/* Título da tabela com classe personalizada */}
             <h1 className={estilo['header-tabela-aluno']}>Lista de Alunos</h1>
+
+            <a
+                href={APP_ROUTES.ROUTE_CADASTRO_ALUNO}
+                className={estilo['anc-pag-cadastro']}
+            >
+                CADASTRAR ALUNO
+            </a>
 
             {/* Componente DataTable: renderiza a tabela com os dados dos alunos */}
             <DataTable

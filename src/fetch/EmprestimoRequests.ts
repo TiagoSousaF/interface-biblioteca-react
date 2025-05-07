@@ -54,6 +54,29 @@ class EmprestimoRequests {
             return null;
         }
     }
+
+    async enviaFormularioEmprestimo(formEmprestimo: string): Promise<boolean> {
+        try {
+            const respostaAPI = await fetch(`${this.serverURL}${this.routeCadastraEmprestimo}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: formEmprestimo
+            });
+    
+            if (!respostaAPI.ok) {
+                throw new Error('Erro ao fazer requisição com o servidor.');
+            }
+    
+            return true;
+        } catch (error) {
+            console.error(`Erro ao enviar o formulário de empréstimo. ${error}`);
+            return false;
+        }
+    }    
+
+    
 }
 
 // Exporta a classe já instanciada, pronta para ser utilizada em outras partes do sistema
