@@ -12,7 +12,6 @@ function FormLivro() {
         quantTotal: 0,
         quantDisponivel: 0,
         valorAquisicao: 0,
-        statusLivroEmprestado: ''
     });
 
     const handleChange = (nome: string, valor: string) => {
@@ -39,6 +38,7 @@ function FormLivro() {
                     <input
                         type="text"
                         name="titulo"
+                        id="titulo"
                         required
                         onChange={(e) => handleChange('titulo', e.target.value)}
                     />
@@ -49,6 +49,7 @@ function FormLivro() {
                     <input
                         type="text"
                         name="autor"
+                        id="autor"
                         required
                         onChange={(e) => handleChange('autor', e.target.value)}
                     />
@@ -59,6 +60,7 @@ function FormLivro() {
                     <input
                         type="text"
                         name="editora"
+                        id="editora"
                         required
                         onChange={(e) => handleChange('editora', e.target.value)}
                     />
@@ -69,6 +71,7 @@ function FormLivro() {
                     <input
                         type="text"
                         name="anoPublicacao"
+                        id="anoPublicacao"
                         minLength={4}
                         maxLength={4}
                         onChange={(e) => handleChange('anoPublicacao', e.target.value)}
@@ -80,6 +83,7 @@ function FormLivro() {
                     <input
                         type="text"
                         name="isbn"
+                        id="isbn"
                         maxLength={20}
                         onChange={(e) => handleChange('isbn', e.target.value)}
                     />
@@ -90,6 +94,7 @@ function FormLivro() {
                     <input
                         type="number"
                         name="quantTotal"
+                        id="quantTotal"
                         required
                         onChange={(e) => handleChange('quantTotal', e.target.value)}
                     />
@@ -100,6 +105,7 @@ function FormLivro() {
                     <input
                         type="number"
                         name="quantDisponivel"
+                        id="quantDisponivel"
                         required
                         onChange={(e) => handleChange('quantDisponivel', e.target.value)}
                     />
@@ -110,6 +116,8 @@ function FormLivro() {
                     <input
                         type="number"
                         name="valorAquisicao"
+                        id="valorAquisicao"
+                        step={0.01}
                         onChange={(e) => handleChange('valorAquisicao', e.target.value)}
                     />
                 </label>
